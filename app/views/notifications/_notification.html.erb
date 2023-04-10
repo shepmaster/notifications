@@ -1,0 +1,3 @@
+<% text = notification.read ? 'read' : 'unread' %>
+
+<%= button_to(text, notification_path(notification), method: :patch, form: { data: { turbo: false } }) %>

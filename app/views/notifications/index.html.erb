@@ -1,0 +1,7 @@
+<%= turbo_stream_from 'notifications_for_1' %>
+
+<div id='notifications'>
+  <%= render partial: 'notifications/notification', collection: @notifications %>
+</div>
+
+<%= button_to('Create new notification', notifications_path, method: :post) %>
