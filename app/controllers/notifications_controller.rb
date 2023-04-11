@@ -13,12 +13,16 @@ class NotificationsController < ApplicationController
 
   def show
     @notification = Notification.find(params[:id])
+
+    respond_to do |format|
+      format.html
+    end
   end
 
   def update
     notification = Notification.find(params[:id])
     notification.update(read: true)
 
-    redirect_to notification_path(notification)
+    redirect_to notification_path(notification), status: 303
   end
 end
