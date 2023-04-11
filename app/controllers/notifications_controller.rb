@@ -3,7 +3,7 @@ class NotificationsController < ApplicationController
     notification = Notification.create
     notification.broadcast_prepend_to('notifications_for_1',
                                       target: 'notifications',
-                                      partial: 'notifications/notification',
+                                      partial: 'notifications/push_notification',
                                       locals: { notification: })
   end
 
